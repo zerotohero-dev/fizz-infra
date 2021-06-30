@@ -1,0 +1,17 @@
+#  \
+#  \\,
+#   \\\,^,.,,.                    “Zero to Hero”
+#   ,;7~((\))`;;,,               <zerotohero.dev>
+#   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+#    )  . ),((  ))\;,
+#   /;`,,/7),)) )) )\,,
+#  (& )`   (,((,((;( ))\,
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: fizz
+  name: common
+data:
+  FIZZ_DEPLOYMENT_TYPE: "development"
+  FIZZ_LOG_DESTINATION: "logdestination"
