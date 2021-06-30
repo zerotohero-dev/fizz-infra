@@ -1,6 +1,6 @@
 #  \
 #  \\,
-#   \\\,^,.,,.                    “Zero to Hero”
+#   \\\,^,.,,.                     Zero to Hero
 #   ,;7~((\))`;;,,               <zerotohero.dev>
 #   ,(@') ;)`))\;;',    stay up to date, be curious: learn
 #    )  . ),((  ))\;,
@@ -11,7 +11,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   namespace: fizz
-  name: questions 
+  name: questions
 data:
   FIZZ_QUESTIONS_SVC_PORT: "9003"
   FIZZ_QUESTIONS_DATA_PATH: "/path/to/data"

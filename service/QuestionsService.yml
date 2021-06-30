@@ -8,11 +8,15 @@
 #  (& )`   (,((,((;( ))\,
 
 apiVersion: v1
-kind: Secret
+kind: Service
 metadata:
   namespace: fizz
-  name: crypto
-data:
-  FIZZ_CRYPTO_AES_PASSPHRASE: "U2Vla3JpdA=="
-  FIZZ_CRYPTO_JWT_KEY: "U2Vla3JpdA=="
-  FIZZ_CRYPTO_HONEYBADGER_API_KEY: "YmFkZ2Vy"
+  name: questions
+spec:
+  selector:
+    app: questions
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 9003

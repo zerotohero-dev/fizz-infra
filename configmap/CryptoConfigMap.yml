@@ -1,6 +1,6 @@
 #  \
 #  \\,
-#   \\\,^,.,,.                    “Zero to Hero”
+#   \\\,^,.,,.                     Zero to Hero
 #   ,;7~((\))`;;,,               <zerotohero.dev>
 #   ,(@') ;)`))\;;',    stay up to date, be curious: learn
 #    )  . ),((  ))\;,
@@ -11,7 +11,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   namespace: fizz
-  name: crypto 
+  name: crypto
 data:
   FIZZ_CRYPTO_SVC_PORT: "9001"
   FIZZ_CRYPTO_RANDOM_BYTE_LENGTH: "48"

@@ -7,12 +7,4 @@
 #   /;`,,/7),)) )) )\,,
 #  (& )`   (,((,((;( ))\,
 
-apiVersion: v1
-kind: Secret
-metadata:
-  namespace: fizz
-  name: crypto
-data:
-  FIZZ_CRYPTO_AES_PASSPHRASE: "U2Vla3JpdA=="
-  FIZZ_CRYPTO_JWT_KEY: "U2Vla3JpdA=="
-  FIZZ_CRYPTO_HONEYBADGER_API_KEY: "YmFkZ2Vy"
+# TBD.

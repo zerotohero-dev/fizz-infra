@@ -1,6 +1,6 @@
 #  \
 #  \\,
-#   \\\,^,.,,.                    “Zero to Hero”
+#   \\\,^,.,,.                     Zero to Hero
 #   ,;7~((\))`;;,,               <zerotohero.dev>
 #   ,(@') ;)`))\;;',    stay up to date, be curious: learn
 #    )  . ),((  ))\;,
@@ -11,7 +11,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: fizz
-  name: questions 
+  name: questions
   labels:
     app: questions
 spec:
@@ -43,17 +43,17 @@ spec:
           - name: FIZZ_QUESTIONS_SVC_PORT
             valueFrom:
               configMapKeyRef:
-                name: questions 
+                name: questions
                 key: FIZZ_QUESTIONS_SVC_PORT
           - name: FIZZ_QUESTIONS_HONEYBADGER_API_KEY
             valueFrom:
               secretKeyRef:
-                name: questions 
+                name: questions
                 key: FIZZ_QUESTIONS_HONEYBADGER_API_KEY
           - name: FIZZ_QUESTIONS_DATA_PATH
             valueFrom:
               configMapKeyRef:
-                name: questions 
+                name: questions
                 key: FIZZ_QUESTIONS_DATA_PATH
 
 
