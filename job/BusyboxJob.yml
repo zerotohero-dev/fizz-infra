@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: fizz
+  name: busybox
+spec:
+  template:
+    spec:
+      containers:
+      - name: busybox 
+        image: nicolaka/netshoot
+        command: ['sh', '-c', 'echo "Hello, Network!" && sleep 3600']
+      restartPolicy: OnFailure
