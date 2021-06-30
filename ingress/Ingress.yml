@@ -19,10 +19,31 @@ spec:
   rules:
     - http:
         paths:
+          - path: /crypto/(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: crypto
+                port:
+                  number: 80
           - path: /idm/(.*)
             pathType: Prefix
             backend:
               service:
                 name: idm
+                port:
+                  number: 80
+          - path: /questions/(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: questions
+                port:
+                  number: 80
+          - path: /store/(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: store
                 port:
                   number: 80
