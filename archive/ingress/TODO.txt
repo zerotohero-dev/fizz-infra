@@ -1,0 +1,10 @@
+Things to do to provision ALB Ingress
+
+1. aws iam attach-role-policy
+2. install cert manager
+3. make necessary changes to the controller specification
+4. install the controller
+5. verify that the controller is installed
+(ref: https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html)
+
+next: https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html

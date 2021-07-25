@@ -1,0 +1,61 @@
+#  \
+#  \\,
+#   \\\,^,.,,.                     Zero to Hero
+#   ,;7~((\))`;;,,               <zerotohero.dev>
+#   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+#    )  . ),((  ))\;,
+#   /;`,,/7),)) )) )\,,
+#  (& )`   (,((,((;( ))\,
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: perseus
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    # alb.ingress.kubernetes.io/listen-ports:  '[{"HTTP": 80}, {"HTTPS":443}]'
+    # alb.ingress.kubernetes.io/group: buzz
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:340111760086:certificate/45330a0a-dbae-41a9-a111-13ed2220cf5bQ
+    # alb.ingress.kubernetes.io/target-type: instance
+    alb.ingress.kubernetes.io/success-codes: 200,404,301
+spec:
+  rules:
+    - host: api.fizzbuzz.pro
+      http:
+        paths:
+          - path: /idm/*
+            backend:
+              serviceName: idm
+              servicePort: 80
+
+#apiVersion: extensions/v1beta1
+#kind: Ingress
+#metadata:
+#  namespace: fizz
+#  name: cerberus
+#  annotations:
+  #  kubernetes.io/ingress.class: alb
+   # alb.ingress.kubernetes.io/scheme: internet-facing
+   # alb.ingress.kubernetes.io/tags: Environment=prod
+  #  alb.ingress.kubernetes.io/listen-ports:  '[{"HTTP": 80}, {"HTTPS":443}]'
+ #   alb.ingress.kubernetes.io/group: fizz
+  #  alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:340111760086:certificate/45330a0a-dbae-41a9-a111-13ed2220cf5bQ
+    # alb.ingress.kubernetes.io/target-type: ip
+#spec:
+#  rules:
+#   - host: api.fizzbuzz.pro
+  #   http:
+   #    paths:
+  #     - path: /*
+   #      backend:
+  #         serviceName: crypto
+ #          servicePort: 80
+#         - path: /questions/*
+#           backend:
+#             serviceName: questions
+#             servicePort: 80
+#         - path: /store/*
+#           backend:
+#             serviceName: store
+#             servicePort: 80

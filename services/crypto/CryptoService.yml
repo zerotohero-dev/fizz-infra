@@ -1,0 +1,21 @@
+#  \
+#  \\,
+#   \\\,^,.,,.                     Zero to Hero
+#   ,;7~((\))`;;,,               <zerotohero.dev>
+#   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+#    )  . ),((  ))\;,
+#   /;`,,/7),)) )) )\,,
+#  (& )`   (,((,((;( ))\,
+
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: fizz
+  name: crypto
+spec:
+  selector:
+    app: crypto
+  ports:
+    - port: 80
+      targetPort: 9001
+  type: ClusterIP

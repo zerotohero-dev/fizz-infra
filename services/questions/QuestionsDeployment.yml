@@ -1,0 +1,62 @@
+#  \
+#  \\,
+#   \\\,^,.,,.                     Zero to Hero
+#   ,;7~((\))`;;,,               <zerotohero.dev>
+#   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+#    )  . ),((  ))\;,
+#   /;`,,/7),)) )) )\,,
+#  (& )`   (,((,((;( ))\,
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: fizz
+  name: questions
+  labels:
+    app: questions
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: questions
+  template:
+    metadata:
+      labels:
+        app: questions
+    spec:
+      containers:
+      - name: questions
+        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-questions:0.0.10
+        ports:
+        - containerPort: 9003
+        env:
+          - name: FIZZ_DEPLOYMENT_TYPE
+            valueFrom:
+              configMapKeyRef:
+                name: common
+                key: FIZZ_DEPLOYMENT_TYPE
+          - name: FIZZ_LOG_DESTINATION
+            valueFrom:
+              secretKeyRef:
+                name: common
+                key: FIZZ_LOG_DESTINATION
+          - name: FIZZ_QUESTIONS_SVC_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: questions
+                key: FIZZ_QUESTIONS_SVC_PORT
+          - name: FIZZ_QUESTIONS_HONEYBADGER_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: questions
+                key: FIZZ_QUESTIONS_HONEYBADGER_API_KEY
+          - name: FIZZ_QUESTIONS_DATA_PATH
+            valueFrom:
+              configMapKeyRef:
+                name: questions
+                key: FIZZ_QUESTIONS_DATA_PATH
+
+
+
+
+
