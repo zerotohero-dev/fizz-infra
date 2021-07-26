@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: store
-        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-store:0.0.10
+        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-store:0.0.11
         ports:
         - containerPort: 9004
         env:
@@ -95,4 +95,8 @@ spec:
               configMapKeyRef:
                 name: store
                 key: FIZZ_STORE_SUBSCRIBE_ERROR_URL
-
+          - name: FIZZ_STORE_PATH_PREFIX
+            valueFrom:
+              configMapKeyRef:
+                name: crypto
+                key: FIZZ_STORE_PATH_PREFIX

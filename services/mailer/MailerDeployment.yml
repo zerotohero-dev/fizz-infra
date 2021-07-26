@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: mailer
-        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-mailer:0.0.10
+        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-mailer:0.0.11
         ports:
         - containerPort: 9001
         env:
@@ -76,5 +76,9 @@ spec:
               secretKeyRef:
                 name: mailer
                 key: FIZZ_MAILER_MAILGUN_API_KEY
-
+          - name: FIZZ_MAILER_PATH_PREFIX
+            valueFrom:
+              configMapKeyRef:
+                name: crypto
+                key: FIZZ_MAILER_PATH_PREFIX
 

@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: crypto
-        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-crypto:0.0.10
+        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-crypto:0.0.13
         ports:
         - containerPort: 9001
         env:
@@ -73,3 +73,8 @@ spec:
               configMapKeyRef:
                 name: crypto
                 key: FIZZ_CRYPTO_JWT_EXPIRY_HOURS
+          - name: FIZZ_CRYPTO_PATH_PREFIX
+            valueFrom:
+              configMapKeyRef:
+                name: crypto
+                key: FIZZ_CRYPTO_PATH_PREFIX

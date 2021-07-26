@@ -18,3 +18,4 @@ data:
   FIZZ_MAILER_WEB_APP_HOST_BASE_URL: "http://localhost/web/host/base"
   FIZZ_MAILER_PASSWORD_RESET_BASE_URL: "http://localhost/password/reset/base"
   FIZZ_MAILER_MAILGUN_DOMAIN: "hermes.fizzbuzz.pro"
+  FIZZ_MAILER_PATH_PREFIX: "/mailer"

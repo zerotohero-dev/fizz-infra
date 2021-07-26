@@ -15,3 +15,4 @@ metadata:
 data:
   FIZZ_QUESTIONS_SVC_PORT: "9003"
   FIZZ_QUESTIONS_DATA_PATH: "/path/to/data"
+  FIZZ_QUESTIONS_PATH_PREFIX: "/questions"

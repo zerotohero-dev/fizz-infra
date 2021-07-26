@@ -26,11 +26,24 @@ spec:
   - host: api.fizzbuzz.pro
     http:
       paths:
-      #- backend:
-      #    serviceName: crypto
-     #     servicePort: 80
-     #   path: /*
+      # This is for testing purposes only.
+      # Once everything is working properly disable this crypto endpoint.
+      # Same goes for mailer. It is for private consumption.
+      # Ideally we should secure them with private service roles / tokens too
+      # while making an API request.
       - backend:
           serviceName: crypto
           servicePort: 80
         path: /crypto/*
+      - backend:
+          serviceName: idm
+          servicePort: 80
+        path: /idm/*
+      - backend:
+          serviceName: questions
+          servicePort: 80
+        path: /questions/*
+      - backend:
+          serviceName: store
+          servicePort: 80
+        path: /store/*

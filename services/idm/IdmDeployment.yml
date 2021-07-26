@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: idm
-        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-idm:0.0.10
+        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-idm:0.0.11
         ports:
         - containerPort: 9002
         env:
@@ -80,3 +80,8 @@ spec:
               secretKeyRef:
                 name: idm
                 key: FIZZ_IDM_DB_CONNECTION_STRING
+          - name: FIZZ_IDM_PATH_PREFIX
+            valueFrom:
+              configMapKeyRef:
+                name: crypto
+                key: FIZZ_IDM_PATH_PREFIX

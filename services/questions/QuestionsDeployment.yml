@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: questions
-        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-questions:0.0.10
+        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-questions:0.0.11
         ports:
         - containerPort: 9003
         env:
@@ -55,8 +55,8 @@ spec:
               configMapKeyRef:
                 name: questions
                 key: FIZZ_QUESTIONS_DATA_PATH
-
-
-
-
-
+          - name: FIZZ_QUESTIONS_PATH_PREFIX
+            valueFrom:
+              configMapKeyRef:
+                name: crypto
+                key: FIZZ_QUESTIONS_PATH_PREFIX
