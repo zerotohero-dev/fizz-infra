@@ -31,10 +31,10 @@ spec:
       # Same goes for mailer. It is for private consumption.
       # Ideally we should secure them with private service roles / tokens too
       # while making an API request.
-      - backend:
-          serviceName: crypto
-          servicePort: 80
-        path: /crypto/*
+      # - backend:
+      #     serviceName: crypto
+      #     servicePort: 80
+      #   path: /crypto/*
       - backend:
           serviceName: idm
           servicePort: 80

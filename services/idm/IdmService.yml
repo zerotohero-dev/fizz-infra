@@ -12,20 +12,10 @@ kind: Service
 metadata:
   namespace: fizz
   name: idm
-  annotations:
-    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-west-2:340111760086:certificate/45330a0a-dbae-41a9-a111-13ed2220cf5b
-    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
-    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
 spec:
   selector:
     app: idm
   ports:
-    - name: http
-      protocol: TCP
-      port: 80
+    - port: 80
       targetPort: 9002
-    - name: https
-      protocol: TCP
-      port: 443
-      targetPort: 9002
-  type: LoadBalancer
+  type: ClusterIP

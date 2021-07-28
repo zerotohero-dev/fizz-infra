@@ -11,13 +11,11 @@ apiVersion: v1
 kind: Service
 metadata:
   namespace: fizz
-  name: store
+  name: mailer
 spec:
   selector:
-    app: store
+    app: mailer
   ports:
-    - name: http
-      protocol: TCP
-      port: 80
-      targetPort: 9004
-  type: LoadBalancer
+    - port: 80
+      targetPort: 9005
+  type: ClusterIP
