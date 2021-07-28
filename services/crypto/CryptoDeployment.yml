@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: crypto
-        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-crypto:0.0.14
+        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-crypto:0.0.15
         ports:
         - containerPort: 9001
         env:
