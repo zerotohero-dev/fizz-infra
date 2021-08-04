@@ -85,3 +85,8 @@ spec:
               configMapKeyRef:
                 name: idm
                 key: FIZZ_IDM_PATH_PREFIX
+          - name: FIZZ_IDM_PATH_PREFIX
+              valueFrom:
+                configMapKeyRef:
+                  name: idm
+                  key: FIZZ_IDM_LAUNCH_STATE
