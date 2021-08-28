@@ -25,6 +25,13 @@ spec:
       containers:
       - name: crypto
         image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-crypto:0.0.15
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "250m"
+          limits:
+            memory: "500Mi"
+            cpu: "500m"
         ports:
         - containerPort: 9001
         env:
