@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: questions
-        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-questions:0.0.14
+        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-questions:0.0.21
         resources:
           requests:
             memory: "50Mi"
@@ -67,3 +67,8 @@ spec:
               configMapKeyRef:
                 name: questions
                 key: FIZZ_QUESTIONS_PATH_PREFIX
+          - name: FIZZ_QUESTIONS_SERVICE_NAME
+            valueFrom:
+              configMapKeyRef:
+                name: questions
+                key: FIZZ_QUESTIONS_SERVICE_NAME

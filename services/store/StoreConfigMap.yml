@@ -22,3 +22,4 @@ data:
   FIZZ_STORE_SUBSCRIBE_SUCCESS_URL: "http://localhost/success"
   FIZZ_STORE_SUBSCRIBE_ERROR_URL: "http://localhost/error"
   FIZZ_STORE_PATH_PREFIX: "/store"
+  FIZZ_STORE_SERVICE_NAME: "fizz-store"
