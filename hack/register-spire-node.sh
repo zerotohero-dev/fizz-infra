@@ -10,7 +10,7 @@
 #  (& )`   (,((,((;( ))\,
 
 DOMAIN="fizzbuzz.pro"
-CLUSTER="fizz-cluster-2"
+CLUSTER="fizz-cluster-v2"
 
 kubectl exec -n spire spire-server-0 -- \
     /opt/spire/bin/spire-server entry create \
@@ -29,4 +29,4 @@ kubectl exec -n spire spire-server-0 -- \
 # TTL       : default
 # Selector  : k8s_sat:agent_ns:spire
 # Selector  : k8s_sat:agent_sa:spire-agent
-# Selector  : k8s_sat:cluster:fizz-cluster-v2A
+# Selector  : k8s_sat:cluster:fizz-cluster-v2
