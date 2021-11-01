@@ -92,6 +92,11 @@ spec:
               configMapKeyRef:
                 name: idm
                 key: FIZZ_IDM_PATH_PREFIX
+          - name: FIZZ_IDM_LAUNCH_STATE
+              valueFrom:
+                configMapKeyRef:
+                  name: idm
+                  key: FIZZ_IDM_LAUNCH_STATE
           - name: FIZZ_IDM_JWT_COOKIE_EXPIRY_HOURS
             valueFrom:
               configMapKeyRef:
