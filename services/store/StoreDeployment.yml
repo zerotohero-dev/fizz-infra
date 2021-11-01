@@ -26,7 +26,14 @@ spec:
     spec:
       containers:
       - name: store
-        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-store:0.0.14
+        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-store:0.0.21
+        resources:
+          requests:
+            memory: "50Mi"
+            cpu: "100m"
+          limits:
+            memory: "200Mi"
+            cpu: "500m"
         ports:
         - containerPort: 9004
         env:
@@ -100,3 +107,8 @@ spec:
             configMapKeyRef:
               name: store
               key: FIZZ_STORE_PATH_PREFIX
+        - name: FIZZ_STORE_SERVICE_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: store
+              key: FIZZ_STORE_SERVICE_NAME

@@ -26,7 +26,14 @@ spec:
     spec:
       containers:
       - name: idm
-        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-idm:0.0.16
+        image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-idm:0.0.21
+        resources:
+          requests:
+            memory: "50Mi"
+            cpu: "100m"
+          limits:
+            memory: "200Mi"
+            cpu: "500m"
         ports:
         - containerPort: 9002
         env:
@@ -90,3 +97,13 @@ spec:
                 configMapKeyRef:
                   name: idm
                   key: FIZZ_IDM_LAUNCH_STATE
+          - name: FIZZ_IDM_JWT_COOKIE_EXPIRY_HOURS
+            valueFrom:
+              configMapKeyRef:
+                name: idm
+                key: FIZZ_IDM_JWT_COOKIE_EXPIRY_HOURS
+          - name: FIZZ_IDM_SERVICE_NAME
+            valueFrom:
+              configMapKeyRef:
+                name: idm
+                key: FIZZ_IDM_SERVICE_NAME
