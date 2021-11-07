@@ -11,7 +11,14 @@
 
 ## SPIRE Development Environment Quick Setup
 
-First, run SPIRE server:
+First, make sure these are defined in your environment.
+
+```bash 
+SPIRE_ROOT=/path/to/spire/installation 
+# e.g., /Users/bob/Desktop/PROJECTS/spire
+```
+
+Then, run SPIRE server:
 
 ```bash
 ./hack/spire/dev/run-server.sh
