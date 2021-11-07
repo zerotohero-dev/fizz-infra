@@ -11,7 +11,7 @@
 
 ## SPIRE Development Environment Quick Setup
 
-First, make sure these are defined in your environment.
+First, make sure `$SPIRE_ROOT` is defined in your environment:
 
 ```bash 
 SPIRE_ROOT=/path/to/spire/installation 
