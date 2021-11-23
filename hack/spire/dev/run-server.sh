@@ -12,6 +12,4 @@
 # shellcheck disable=SC2164
 cd "$SPIRE_ROOT"
 
-./bin/spire-server run -config "$FIZZ_INFRA_ROOT"/spire/conf/local/server.conf
-
-
+./bin/spire-server run -config "$SPIRE_CONF_PATH"/server.conf

@@ -19,4 +19,3 @@ data:
   FIZZ_CRYPTO_JWT_EXPIRY_HOURS: "720"
   FIZZ_CRYPTO_PATH_PREFIX: "/crypto"
   FIZZ_CRYPTO_SERVICE_NAME: "fizz-crypto"
-  FIZZ_CRYPTO_MTLS_SERVER_ADDRESS: "fizz-crypto.fizz.svc.cluster.local"

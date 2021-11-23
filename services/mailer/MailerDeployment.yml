@@ -67,7 +67,6 @@ spec:
               configMapKeyRef:
                 name: mailer
                 key: FIZZ_MAILER_PASSWORD_RESET_BASE_URL
-
           - name: FIZZ_MAILER_MAILGUN_DOMAIN
             valueFrom:
               configMapKeyRef:

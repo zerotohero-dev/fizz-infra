@@ -14,12 +14,9 @@ metadata:
   name: store
 data:
   FIZZ_STORE_SVC_PORT: "9004"
-  FIZZ_STORE_CRYPTO_ENDPOINT_URL: "http://localhost:9001/"
-  FIZZ_STORE_IDM_ENDPOINT_URL: "http://localhost:9002/"
   FIZZ_STORE_USERS_TABLE_NAME: "users"
-  FIZZ_STORE_PLANS_TABLE_NAME: "plans"
-  FIZZ_STORE_SUBSCRIBE_API_URL: "http://localhost/store/"
-  FIZZ_STORE_SUBSCRIBE_SUCCESS_URL: "http://localhost/success"
-  FIZZ_STORE_SUBSCRIBE_ERROR_URL: "http://localhost/error"
+  FIZZ_STORE_SUBSCRIBE_API_URL: "https://fizzbuzz.pro/store/"
+  FIZZ_STORE_SUBSCRIBE_SUCCESS_URL: "https://fizzbuzz.pro/sub/success"
+  FIZZ_STORE_SUBSCRIBE_ERROR_URL: "https://fizzbuzz.pro/sub/error"
   FIZZ_STORE_PATH_PREFIX: "/store"
   FIZZ_STORE_SERVICE_NAME: "fizz-store"

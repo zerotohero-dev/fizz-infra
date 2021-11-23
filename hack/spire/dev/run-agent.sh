@@ -14,5 +14,5 @@ cd "$SPIRE_ROOT"
 
 JOIN_TOKEN="33a2d3da-2c40-4f0f-887d-1ade2dd8a137"
 
-./bin/spire-agent run -config "$FIZZ_INFRA_ROOT"/spire/conf/local/agent.conf \
+./bin/spire-agent run -config "$SPIRE_CONF_PATH"/agent.conf \
 -joinToken $JOIN_TOKEN
