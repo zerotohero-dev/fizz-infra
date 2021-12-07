@@ -9,6 +9,14 @@
 (& )`   (,((,((;( ))\,
 ```
 
+## About the Staging Environment
+
+The staging environment is an Ubuntu Linux server. There’s no orchestrator
+installed on it. Workload attestation is done using unix user selectors.
+
+On production, however, workload attestation is done using Kubernetes
+selectors.
+
 ## SPIRE Development Environment Quick Setup
 
 First, make sure `$SPIRE_ROOT` is defined in your environment:

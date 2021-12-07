@@ -12,7 +12,7 @@
 # shellcheck disable=SC2164
 cd "$SPIRE_ROOT"
 
-JOIN_TOKEN="1381f53f-dbf8-46b1-b833-eee73a90d95d"
+JOIN_TOKEN="013b3196-9635-4da7-8dea-014333f6ebc9"
 
 ./bin/spire-agent run -config "$SPIRE_CONF_PATH"/agent.conf \
 -joinToken $JOIN_TOKEN
