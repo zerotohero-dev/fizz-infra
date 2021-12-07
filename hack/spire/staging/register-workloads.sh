@@ -12,15 +12,13 @@
 # shellcheck disable=SC2164
 cd "$SPIRE_ROOT"
 
-# For Demo.
+# Crypto
 ./bin/spire-server entry create -spiffeID spiffe://fizzbuzz.pro/app/fizz-crypto \
                             -parentID spiffe://fizzbuzz.pro/fizz-agent \
-                            -selector unix:user:f-crypto
+                            -selector unix:user:fizz-crypto
+
+# IDM
 ./bin/spire-server entry create -spiffeID spiffe://fizzbuzz.pro/app/fizz-idm \
                             -parentID spiffe://fizzbuzz.pro/fizz-agent \
-                            -selector unix:user:f-idm
+                            -selector unix:user:fizz-idm
 
-# Used on IDEs.
-./bin/spire-server entry create -spiffeID spiffe://fizzbuzz.pro/app/fizz-default \
-                            -parentID spiffe://fizzbuzz.pro/fizz-agent \
-                            -selector unix:user:volkan

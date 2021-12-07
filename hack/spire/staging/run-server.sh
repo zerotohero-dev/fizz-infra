@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 #  \
 #  \\,
 #   \\\,^,.,,.                     Zero to Hero
@@ -7,15 +9,10 @@
 #   /;`,,/7),)) )) )\,,
 #  (& )`   (,((,((;( ))\,
 
-apiVersion: v1
-kind: Service
-metadata:
-  namespace: fizz
-  name: questions
-spec:
-  selector:
-    app: questions
-  ports:
-    - port: 80
-      targetPort: 9003
-  type: ClusterIP
+# shellcheck disable=SC2164
+cd "$SPIRE_ROOT"
+
+echo $SPIRE_ROOT
+echo $SPIRE_CONF_PATH
+
+./bin/spire-server run -config "$SPIRE_CONF_PATH"/server.conf

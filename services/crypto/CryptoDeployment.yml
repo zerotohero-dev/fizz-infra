@@ -50,6 +50,11 @@ spec:
               configMapKeyRef:
                 name: crypto
                 key: FIZZ_CRYPTO_SVC_PORT
+          - name: FIZZ_CRYPTO_MTLS_SERVER_ADDRESS
+            valueFrom:
+              configMapKeyRef:
+                name: crypto
+                key: FIZZ_CRYPTO_MTLS_SERVER_ADDRESS
           - name: FIZZ_CRYPTO_JWT_KEY
             valueFrom:
               secretKeyRef:

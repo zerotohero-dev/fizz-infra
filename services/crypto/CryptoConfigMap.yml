@@ -14,6 +14,7 @@ metadata:
   name: crypto
 data:
   FIZZ_CRYPTO_SVC_PORT: "9001"
+  FIZZ_CRYPTO_MTLS_SERVER_ADDRESS: "fizz-crypto.fizz.svc.cluster.local"
   FIZZ_CRYPTO_RANDOM_BYTE_LENGTH: "48"
   FIZZ_CRYPTO_BCRYPT_HASH_ROUNDS: "8"
   FIZZ_CRYPTO_JWT_EXPIRY_HOURS: "720"

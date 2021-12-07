@@ -12,4 +12,4 @@
 # shellcheck disable=SC2164
 cd "$SPIRE_ROOT"
 
-./bin/spire-server run -config "$SPIRE_CONF_PATH"/server.conf
+./bin/spire-server token generate -spiffeID spiffe://fizzbuzz.pro/fizz-agent

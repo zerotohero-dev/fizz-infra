@@ -9,7 +9,9 @@
 #   /;`,,/7),)) )) )\,,
 #  (& )`   (,((,((;( ))\,
 
-# shellcheck disable=SC2164
-cd "$SPIRE_ROOT"
-
-./bin/spire-server run -config "$SPIRE_CONF_PATH"/server.conf
+git clone --single-branch --branch v1.1.0 https://github.com/spiffe/spire.git
+cd spire || exit
+go build ./cmd/spire-server
+go build ./cmd/spire-agent
+mkdir bin
+mv spire-server spire-agent bin
