@@ -16,22 +16,23 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/healthcheck-path: /healthz
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:340111760086:certificate/88c22c98-b6fb-4dc8-a00a-fd72f43aa6ec
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:340111760086:certificate/45330a0a-dbae-41a9-a111-13ed2220cf5b
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
 spec:
   rules:
-  - host: fizzbuzz.pro
+  - host: api.fizzbuzz.pro
     http:
       paths:
       - backend:
-          serviceName: web
+          serviceName: idm
           servicePort: 80
-        path: /*
-  - host: www.fizzbuzz.pro
-    http:
-      paths:
+        path: /idm/*
       - backend:
-          serviceName: web
+          serviceName: questions
           servicePort: 80
-        path: /*
+        path: /questions/*
+      - backend:
+          serviceName: store
+          servicePort: 80
+        path: /store/*

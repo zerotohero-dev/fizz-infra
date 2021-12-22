@@ -1,0 +1,19 @@
+#  \
+#  \\,
+#   \\\,^,.,,.                     Zero to Hero
+#   ,;7~((\))`;;,,               <zerotohero.dev>
+#   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+#    )  . ),((  ))\;,
+#   /;`,,/7),)) )) )\,,
+#  (& )`   (,((,((;( ))\,
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: fizz
+  name: web
+data:
+  FIZZ_WEB_GIN_MODE: "release"
+  FIZZ_WEB_AUTH0_DOMAIN: "fizzbuzzpro.us.auth0.com"
+  FIZZ_WEB_AUTH0_CALLBACK_URL: "https://fizzbuzz.pro/auth/callback"
+  FIZZ_WEB_GUMROAD_PRODUCT_ID: "KtXMBpFvCDNeO186uctKfw=="
