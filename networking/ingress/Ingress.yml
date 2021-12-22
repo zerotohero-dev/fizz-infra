@@ -7,7 +7,7 @@
 #   /;`,,/7),)) )) )\,,
 #  (& )`   (,((,((;( ))\,
 
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: cerberus
@@ -25,13 +25,19 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: web
-          servicePort: 80
-        path: /*
+          service:
+            name: web
+            port:
+              number: 80
+        pathType: Prefix
+        path: /
   - host: www.fizzbuzz.pro
     http:
       paths:
       - backend:
-          serviceName: web
-          servicePort: 80
-        path: /*
+          service:
+            name: web
+            port:
+              number: 80
+        pathType: Prefix
+        path: /
