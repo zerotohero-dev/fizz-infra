@@ -1,0 +1,93 @@
+#  \
+#  \\,
+#   \\\,^,.,,.                     Zero to Hero
+#   ,;7~((\))`;;,,               <zerotohero.dev>
+#   ,(@') ;)`))\;;',    stay up to date, be curious: learn
+#    )  . ),((  ))\;,
+#   /;`,,/7),)) )) )\,,
+#  (& )`   (,((,((;( ))\,
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: fizz
+  name: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-web:0.0.7
+          resources:
+            requests:
+              memory: "100Mi"
+              cpu: "250m"
+            limits:
+              memory: "500Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8888
+          env:
+            #
+            # configmap
+            #
+            - name: GIN_MODE
+              valueFrom:
+                configMapKeyRef:
+                  name: web
+                  key: FIZZ_WEB_GIN_MODE
+            - name: FIZZ_WEB_AUTH0_DOMAIN
+              valueFrom:
+                configMapKeyRef:
+                  name: web
+                  key: FIZZ_WEB_AUTH0_DOMAIN
+            - name: FIZZ_WEB_AUTH0_CALLBACK_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: web
+                  key: FIZZ_WEB_AUTH0_CALLBACK_URL
+            - name: FIZZ_WEB_GUMROAD_PRODUCT_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: web
+                  key: FIZZ_WEB_GUMROAD_PRODUCT_ID
+            #
+            # secret
+            #
+            - name: FIZZ_WEB_AUTH0_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: web
+                  key: FIZZ_WEB_AUTH0_CLIENT_ID
+            - name: FIZZ_WEB_AUTH0_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: web
+                  key: FIZZ_WEB_AUTH0_CLIENT_SECRET
+            - name: FIZZ_WEB_GUMROAD_ACCESS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: web
+                  key: FIZZ_WEB_GUMROAD_ACCESS_TOKEN
+            - name: FIZZ_WEB_SESSION_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: web
+                  key: FIZZ_WEB_SESSION_SECRET
+            - name: FIZZ_WEB_PAPERTRAIL_LOG_DESTINATION
+              valueFrom:
+                secretKeyRef:
+                  name: web
+                  key: FIZZ_WEB_PAPERTRAIL_LOG_DESTINATION
+            - name: FIZZ_WEB_MONGODB_CONNECTION_STRING
+              valueFrom:
+                secretKeyRef:
+                  name: web
+                  key: FIZZ_WEB_MONGODB_CONNECTION_STRING
