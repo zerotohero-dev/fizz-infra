@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-web:0.0.7
+          image: 340111760086.dkr.ecr.us-west-2.amazonaws.com/fizz-web:0.1.0
           resources:
             requests:
               memory: "100Mi"
